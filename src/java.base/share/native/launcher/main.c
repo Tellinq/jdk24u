@@ -31,6 +31,12 @@
  */
 
 #include "defines.h"
+
+#ifdef _WIN32
+#pragma comment(linker, "/export:AmdPowerXpressRequestHighPerformance,Data")
+extern __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
+#endif
+
 #include "jli_util.h"
 #include "jni.h"
 
