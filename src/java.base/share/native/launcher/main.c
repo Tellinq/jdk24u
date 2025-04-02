@@ -31,6 +31,12 @@
  */
 
 #include "defines.h"
+
+#ifdef _WIN32
+#pragma comment(linker, "/export:NvOptimusEnablement,Data")
+extern __declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000001;
+#endif
+
 #include "jli_util.h"
 #include "jni.h"
 
